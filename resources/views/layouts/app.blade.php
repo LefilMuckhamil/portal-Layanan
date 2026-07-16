@@ -1,36 +1,58 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Layanan Diskominsa Aceh Barat</title>
+    
+    <!-- Pemanggilan CSS bawaan -->
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
+    <style>
+        /* CSS Murni Dasar agar rapi */
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; }
+        .navbar { background-color: #004a87; color: white; padding: 15px 20px; display: flex; justify-content: space-between; }
+        .navbar a { color: white; text-decoration: none; margin-left: 15px; }
+        .container { padding: 20px; min-height: 80vh; }
+        .footer { background-color: #333; color: white; text-align: center; padding: 10px; margin-top: auto; }
+    </style>
+</head>
+<body>
 
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @isset($header)
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endisset
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+    <!-- NAVBAR SEDERHANA -->
+    <nav class="navbar">
+        <div>
+            <strong>DISKOMINSA ACEH BARAT</strong>
         </div>
-    </body>
+        <div>
+            <a href="/">Beranda</a>
+            
+            <!-- Logika simpel: Jika belum login tampilkan tombol Login, jika sudah login tampilkan Dashboard -->
+            @guest
+                <a href="{{ route('login') }}">Login Admin</a>
+            @else
+                <a href="{{ route('dashboard') }}">Dashboard Saya</a>
+                
+                <!-- Form Logout Standar Laravel -->
+                <form method="POST" action="{{ route('logout') }}" style="display: inline;">
+                    @csrf
+                    <button type="submit" style="background:none; border:none; color:white; cursor:pointer; margin-left:15px; font-size:16px;">
+                        Logout
+                    </button>
+                </form>
+            @endguest
+        </div>
+    </nav>
+
+    <!-- AREA KONTEN UTAMA YANG BERUBAH-UBAH -->
+    <div class="container">
+        @yield('content')
+    </div>
+
+    <!-- FOOTER UTAMA -->
+    <footer class="footer">
+        <p>&copy; 2026 Diskominsa Aceh Barat</p>
+    </footer>
+
+</body>
 </html>

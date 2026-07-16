@@ -17,6 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            
+            // --- Kolom Tambahan Mulai ---
+            $table->string('role')->default('masyarakat'); // Bisa berisi: 'admin', 'masyarakat', 'asn'
+            $table->string('nik')->nullable()->unique();   // Disimpan jika yang mendaftar adalah Masyarakat
+            $table->string('nip')->nullable()->unique();   // Disimpan jika yang mendaftar adalah ASN
+            $table->string('phone')->nullable();           // Nomor WhatsApp / HP
+            // --- Kolom Tambahan Selesai ---
+            
             $table->rememberToken();
             $table->timestamps();
         });
