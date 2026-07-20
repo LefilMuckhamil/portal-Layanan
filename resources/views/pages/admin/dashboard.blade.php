@@ -36,41 +36,41 @@
             <!-- Menu Navigasi Berdasarkan Layanan Anda -->
             <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto custom-scrollbar">
                 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 mb-2">Utama</div>
-                <a href="#" class="flex items-center gap-3 px-4 py-3 text-white bg-emerald-600/10 border-l-4 border-emerald-500 rounded-r-xl transition-all">
+                <a href="/admin/dashboard" class="flex items-center gap-3 px-4 py-3 text-white bg-emerald-600/10 border-l-4 border-emerald-500 rounded-r-xl transition-all">
                     <i class="fa-solid fa-grid-horizontal text-emerald-400 w-5"></i>
                     <span class="text-sm font-medium">Dashboard Overview</span>
                 </a>
 
                 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 pt-4 mb-2">Layanan Digital</div>
                 <!-- 1. Teknis & Website Desa/Pesantren -->
-                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
+                <a href="/admin/web-desa" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
                     <i class="fa-solid fa-globe w-5 group-hover:text-emerald-400 transition-colors"></i>
                     <span class="text-sm font-medium">Web Desa & Ponpes</span>
                 </a>
                 <!-- 2. Gemail ASN & Instansi -->
-                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
+                <a href="/admin/email-asn" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
                     <i class="fa-solid fa-envelope-open-text w-5 group-hover:text-emerald-400 transition-colors"></i>
                     <span class="text-sm font-medium">Email ASN & Instansi</span>
                 </a>
                 <!-- 3. Cloud Government -->
-                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
+                <a href="/admin/cloud-gov" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
                     <i class="fa-solid fa-cloud-arrow-up w-5 group-hover:text-emerald-400 transition-colors"></i>
                     <span class="text-sm font-medium">Cloud Government</span>
                 </a>
                 <!-- 4. Layanan TTE -->
-                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
+                <a href="/admin/tte" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
                     <i class="fa-solid fa-file-signature w-5 group-hover:text-emerald-400 transition-colors"></i>
                     <span class="text-sm font-medium">Layanan TTE</span>
                 </a>
 
                 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 pt-4 mb-2">Sub Layanan & Support</div>
                 <!-- Sub Layanan: Riset PW OTP -->
-                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group bg-amber-500/5 border border-amber-500/10">
+                <a href="/admin/riset-pw" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group bg-amber-500/5 border border-amber-500/10">
                     <i class="fa-solid fa-key-skeleton w-5 text-amber-400"></i>
                     <span class="text-sm font-medium">Riset PW OTP</span>
                 </a>
                 <!-- 5. Layanan Bantuan -->
-                <a href="#" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
+                <a href="/admin/helpdesk" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all group">
                     <i class="fa-solid fa-headset w-5 group-hover:text-emerald-400 transition-colors"></i>
                     <span class="text-sm font-medium">Helpdesk Bantuan</span>
                 </a>
@@ -78,15 +78,15 @@
 
             <!-- Bottom Profile / Logout -->
             <div class="p-4 border-t border-slate-800/60 bg-slate-950/10">
-    <!-- Form Logout Laravel -->
-    <form method="POST" action="{{ route('logout') }}">
-        @csrf
-        <button type="submit" class="flex items-center gap-3 w-full px-4 py-3 text-slate-400 hover:text-rose-400 hover:bg-rose-500/5 rounded-xl transition-all text-left">
-            <i class="fa-solid fa-power-off text-sm"></i>
-            <span class="text-sm font-medium">Keluar Sistem</span>
-        </button>
-    </form>
-</div>
+                <!-- Form Logout Laravel -->
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="flex items-center gap-3 w-full px-4 py-3 text-slate-400 hover:text-rose-400 hover:bg-rose-500/5 rounded-xl transition-all text-left">
+                        <i class="fa-solid fa-power-off text-sm"></i>
+                        <span class="text-sm font-medium">Keluar Sistem</span>
+                    </button>
+                </form>
+            </div>
         </aside>
 
         <!-- ========================================== -->

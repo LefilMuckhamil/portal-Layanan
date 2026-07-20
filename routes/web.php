@@ -66,3 +66,16 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     })->name('admin.dashboard');
 
 });
+
+Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+    // Dashboard Utama Overview
+    Route::get('/admin/dashboard', function () {
+        return view('pages.admin.dashboard'); 
+    })->name('admin.dashboard');
+
+    // Tambahkan 4 Jalur Halaman Fitur Layanan Terpisah Ini:
+    Route::get('/admin/web-desa', function () { return view('pages.admin.web-desa'); });
+    Route::get('/admin/email-asn', function () { return view('pages.admin.email-asn'); });
+    Route::get('/admin/cloud-gov', function () { return view('pages.admin.cloud-gov'); });
+    Route::get('/admin/tte', function () { return view('pages.admin.tte'); });
+});
