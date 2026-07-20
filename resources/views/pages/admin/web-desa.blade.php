@@ -25,7 +25,7 @@
             <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto">
                 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 mb-2">Utama</div>
                 <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 px-4 py-2.5 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-xl transition-all">
-                    <i class="fa-solid fa-grid-horizontal w-5"></i><span class="text-sm font-medium">Dashboard Overview</span>
+                    <i class="fa-solid fa-grid-horizontal w-5"></i><span class="text-sm font-medium">Dashboard Admin</span>
                 </a>
                 <div class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-4 pt-4 mb-2">Layanan Digital</div>
                 <!-- Aktif -->
